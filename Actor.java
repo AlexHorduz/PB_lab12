@@ -5,11 +5,6 @@ import java.util.HashSet;
 public class Actor {
     private final String name;
     private HashSet<Film> films;
-
-    public Actor(String name, HashSet<Film> films) {
-        this.name = name;
-        this.films = films;
-    }
     
     public Actor(String name) {
         this.name = name;
