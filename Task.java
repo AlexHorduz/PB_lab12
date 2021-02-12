@@ -13,15 +13,16 @@ public class Task {
     	willSmith.addFilm(menInBlack);
     	tommy.addFilm(menInBlack);
     	
-        Films_DB.addActor(willSmith);
-        Films_DB.addActor(tommy);
-        Films_DB.addFilm(menInBlack);
-        System.out.println(Task3().toString());
+    	Films_DB my_DB = new Films_DB();
+    	my_DB.addActor(willSmith);
+    	my_DB.addActor(tommy);
+    	my_DB.addFilm(menInBlack);
+        System.out.println(Task3(my_DB).toString());
 
     }
 
-    private static boolean Task1() {
-        HashSet<Actor> actors = Films_DB.getActors();
+    private static boolean Task1(Films_DB DB) {
+        HashSet<Actor> actors = DB.getActors();
         for (Iterator<Actor> it = actors.iterator(); it.hasNext(); ) {
             if (it.next().getFilms().isEmpty())
                 return true;
@@ -29,11 +30,11 @@ public class Task {
         return false;
     }
 
-    private static HashSet<Actor> Task2(Actor actor) {
+    private static HashSet<Actor> Task2(Actor actor, Films_DB DB) {
         if (actor == null)
             throw new NullPointerException("NULL passed as a parameter");
         HashSet<Actor> actorsToReturn = new HashSet<Actor>();
-        HashSet<Film> allFilms = Films_DB.getFilms();
+        HashSet<Film> allFilms = DB.getFilms();
         HashSet<Film> actorsFilms = actor.getFilms();
         
         for (Iterator it1 = allFilms.iterator(); it1.hasNext(); ) {    //searching in films
@@ -47,7 +48,7 @@ public class Task {
             }
         }
 
-        HashSet<Actor> allActors = Films_DB.getActors();
+        HashSet<Actor> allActors = DB.getActors();
         for (Iterator it1 = allActors.iterator(); it1.hasNext(); ) {    //searching in actors
             Actor anotherActor = (Actor)it1.next();
             for (Iterator it2 = anotherActor.getFilms().iterator(); it2.hasNext(); ) {
@@ -60,8 +61,8 @@ public class Task {
         return actorsToReturn;
     }
 
-    private static Film Task3() {
-        HashSet<Film> allFilms = Films_DB.getFilms();
+    private static Film Task3(Films_DB DB) {
+        HashSet<Film> allFilms = DB.getFilms();
         if (allFilms.size() == 0)
             throw new IllegalStateException("There is no films in the database");
 
