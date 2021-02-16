@@ -39,4 +39,29 @@ public class Films_DB {
     public HashSet<Actor> getActors() {
         return (HashSet<Actor>) actors.clone();
     }
+	
+    @Override
+    public int hashCode()
+    {
+    	final int prime = 17;
+		int result = 1;
+		result = prime * result + films.hashCode();
+		result = prime * result + actors.hashCode();
+		return result;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+    	if (this == o) {
+    		return true;
+    	}
+    	
+    	if (o == null || getClass() != o.getClass()){ 
+    		return false;
+    	}
+    	
+    	Films_DB other = (Films_DB) o;
+    	
+    	return other.hashCode() == hashCode();
+    }
 } 
