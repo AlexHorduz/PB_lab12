@@ -23,7 +23,7 @@ public class Film {
     @Override
     public int hashCode()
     {
-        return name.hashCode();
+        return name.hashCode() + 17 * actors.hashCode();
     }
     
     @Override
