@@ -17,7 +17,7 @@ public class Task {
     	my_DB.addActor(willSmith);
     	my_DB.addActor(tommy);
     	my_DB.addFilm(menInBlack);
-        System.out.println(Task3(my_DB).toString());
+        System.out.println(Task3(my_DB));
 
     }
 
