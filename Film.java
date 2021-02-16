@@ -24,10 +24,7 @@ public class Film {
     public int hashCode()
     {
     	final int prime = 17;
-	int result = 1;
-	result = prime * result + name.hashCode();
-	result = prime * result + actors.hashCode();
-	return result;
+		return (prime + name.hashCode());
     }
     
     @Override
