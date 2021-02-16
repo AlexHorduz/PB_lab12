@@ -44,10 +44,10 @@ public class Films_DB {
     public int hashCode()
     {
     	final int prime = 17;
-		int result = 1;
-		result = prime * result + films.hashCode();
-		result = prime * result + actors.hashCode();
-		return result;
+        int result = 1;
+	result = prime * result + films.hashCode();
+	result = prime * result + actors.hashCode();
+	return result;
     }
     
     @Override
