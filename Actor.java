@@ -26,7 +26,7 @@ public class Actor {
     @Override
     public int hashCode()
     {
-        return name.hashCode();
+        return name.hashCode() + 17 * films.hashCode();
     }
     
     @Override
